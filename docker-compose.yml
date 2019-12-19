@@ -1,0 +1,11 @@
+version: '3'
+  
+jupyter:
+    image: jupyter/scipy-notebook
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./data:/opt/data
+    restart: always
+    shm_size: 1g
+    command: jupyter notebook --allow-root --ip="0.0.0.0" --NotebookApp.token='secretpassword'
